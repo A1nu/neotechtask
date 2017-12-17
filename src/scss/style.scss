@@ -1,0 +1,104 @@
+header {
+  background-color: #0a1013;
+  .row {
+    border-bottom: 2px solid #3f4245;
+    .left {
+      .logo {
+        padding: 2%;
+        margin: auto;
+      }
+    }
+    .right {
+      border-left: 2px solid #3f4245;
+      .bt-logo {
+        padding: 24% 4%;
+      }
+    }
+  }
+}
+
+body {
+  background-color: black;
+  .wrapper {
+    padding: 4% 5% 0% 5%;
+    .main-content {
+      background-color: #ffffff;
+      .mid-content {
+        .heading {
+          background-color: #ffffff;
+          h4 {
+            padding: 2% 0% 2% 0%;
+          }
+          border-bottom: solid #d6dadc;
+        }
+        .exchange-form {
+          background-color: #ffffff;
+          border-radius: 0;
+          padding: 0;
+          .what-to-do {
+            .choosing-form{
+              background-color: #f9f9f9;
+              border: 1px solid #d6dadc;
+              padding: 5%;
+              .currency {
+                width: 220%;
+              }
+              .input-summ {
+                padding-left: 30%;
+                .summ {
+                  width: 110%;
+                }
+              }
+              h6 {
+                padding-top: 3%;
+              }
+              .switch {
+                padding-top: 7%;
+                padding-left: 15%;
+                .down {
+                  padding-left: 50%;
+                }
+              }
+            }
+          }
+        }
+        .current-indexes {
+          .list-group-item {
+            border-radius: 0;
+          }
+        }
+        .btn {
+        }
+      }
+    }
+    .bottom-content {
+      background-color: #1c1f22;
+      .footer-left {
+        padding-top: 2%;
+        .navbar, .navbar-nav {
+          background-color: #1c1f22;
+          float: none;
+          border: none;
+          li {
+            padding: 1%;
+            text-decoration: underline;
+            a {
+              color: #5e656d;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .footer-right {
+        padding-top: 3.2%;
+        background-color: #1c1f22;
+        .img-row {
+          padding-left: 30%;
+          img {
+            padding-left: 3%;
+          }
+        }
+        }
+    }
+  }
+}

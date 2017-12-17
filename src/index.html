@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<link lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coindesk</title>
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--endbuild-->
+</head>
+<body>
+
+    <header>
+        <div class="row">
+            <div class="col-md-8 col-sm-3 left">
+                <img class="logo" src="images/logo.png">
+            </div>
+            <div class="col-md-3 col-sm-8 middle">1</div>
+            <div class="col-md-1 col-sm-1 right">
+                <img class="bt-logo" src="images/btclogo.png">
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper container">
+        <div class="row main-content">
+            <section class="col-md-12 mid-content">
+                <div class="heading"><h4>Бинарный опцион</h4></div>
+                <div class="jumbotron exchange-form">
+                    <div class="row">
+                        <div class="col-md-7 what-to-do">
+                            <h4>Выберите валюту и введите сумму ставки:</h4>
+                            <div class="choosing-form">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="currency">Валюта</label>
+                                        <select class="form-control currency" id="currency">
+                                            <option value="0" data-image="images/usd-min.png">USD</option>
+                                            <option value="1">EUR</option>
+                                            <option value="2">RUB</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group input-summ">
+                                        <label for="summ">Сумма</label>
+                                        <input type="number" class="form-control summ" id="summ">
+                                    </div>
+                                </form>
+                                <h6>После следующего изменения котировок индекс биткоина к этой валюте пойдет:</h6>
+                                <div class="switch">
+                                    <label class="radio-inline up"><input type="radio" name="optradio" value="0">Вверх</label>
+                                    <label class="radio-inline down"><input type="radio" name="optradio" value="1">Вниз</label>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="accept" value="">
+                                    Я ознакомлен с правилами сервиса.
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-5 current-indexes">
+                            <div class="container">
+                                <h4>Текущие индексы:</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <img src="images/usd.png">
+                                    </li>
+                                    <li class="list-group-item">
+                                        <img src="images/euro.png">
+                                    </li>
+                                    <li class="list-group-item">
+                                        <img src="images/rub.png">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="low">
+                    <button type="button" class="btn">Сделать ставку</button>
+                </div>
+            </section>
+        </div>
+        <div class="row bottom-content">
+            <div class="col-md-8 footer-left">
+                <nav class="navbar navbar-default">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Ha главный сайт</a></li>
+                        <li><a href="">Регистрация</a></li>
+                        <li><a href="">Документы</a></li>
+                        <li><a href="">Правила</a></li>
+                        <li><a href="">О компании</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-4 footer-right">
+                <div class="img-row">
+                    <img class="logo" src="images/vk.png">
+                    <img class="logo" src="images/yt.png">
+                    <img class="logo" src="images/inst.png">
+                    <img class="logo" src="images/fb.png">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer></footer>
+<!--build:js js/main.min.js -->
+<script language="JavaScript" src="js/jquery.js"></script>
+<script language="JavaScript" src="js/bootstrap.js"></script>
+<script language="JavaScript" src="js/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>
