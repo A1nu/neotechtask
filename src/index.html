@@ -54,9 +54,9 @@
                                     <div class="form-group">
                                         <label for="currency">Валюта</label>
                                         <select class="form-control currency" id="currency">
-                                            <option value="0" data-image="images/usd-min.png">USD</option>
-                                            <option value="1">EUR</option>
-                                            <option value="2">RUB</option>
+                                            <option value="0">USD</option>
+                                            <option value="1">GBP</option>
+                                            <option value="2">EUR</option>
                                         </select>
                                     </div>
                                     <div class="form-group input-summ">
@@ -66,12 +66,12 @@
                                 </form>
                                 <h6>После следующего изменения котировок индекс биткоина к этой валюте пойдет:</h6>
                                 <div class="switch">
-                                    <label class="radio-inline up"><input type="radio" name="optradio" value="0">Вверх</label>
-                                    <label class="radio-inline down"><input type="radio" name="optradio" value="1">Вниз</label>
+                                    <label class="radio-inline up"><input type="radio" name="optradio" id="up" value="unchecked">Вверх</label>
+                                    <label class="radio-inline down"><input type="radio" name="optradio" id="down" value="unchecked">Вниз</label>
                                 </div>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" id="accept" value="">
+                                <label><input type="checkbox" id="accept" value="unchecked">
                                     Я ознакомлен с правилами сервиса.
                                 </label>
                             </div>
@@ -91,7 +91,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="currency-cell">
-                                            <div class="currency-logo"><img src="images/euro.png"></div>
+                                            <div class="currency-logo"><img src="images/gbp.png"></div>
                                             <div class="currency-index">
                                                 <div class="currency-head" id="currency-name1"></div>
                                                 <div class="currency-state" id="currency-state1"></div>
@@ -100,7 +100,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="currency-cell">
-                                            <div class="currency-logo"><img src="images/gbp.png"></div>
+                                            <div class="currency-logo"><img src="images/euro.png"></div>
                                             <div class="currency-index">
                                                 <div class="currency-head" id="currency-name2"></div>
                                                 <div class="currency-state" id="currency-state2"></div>
@@ -108,13 +108,14 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <div id="currency-to-btc"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="low">
-                    <button type="button" class="btn btn-outline-secondary">
-                        <img src="images/btn.png"><label class="button text">Сделать ставку</label>
+                    <button type="button" class="btn btn-outline-secondary active" id="confirm-button">
+                        <img src="images/btn.png"><label class="button text" >Сделать ставку</label>
                     </button>
                 </div>
             </section>
@@ -151,6 +152,7 @@
 <script language="JavaScript" src="js/main.js"></script>
 <script language="JavaScript" src="js/indexes.js"></script>
 <script language="JavaScript" src="js/user.js"></script>
+<script language="JavaScript" src="js/transaction.js"></script>
 <!-- endbuild -->
 </body>
 </html>
