@@ -8,10 +8,51 @@ header {
         margin: auto;
       }
     }
+    .middle {
+      .user-cell {
+        .avatar {
+          display: table-cell;
+          vertical-align: middle;
+          padding-top: 7%;
+          margin: auto;
+        }
+        .account-data {
+          display: table-cell;
+          padding: 8% 0% 0 10%;
+          width: 300%;
+          .account-cell {
+            display: inline;
+            .name {
+              color: white;
+              font-size: 110%;
+              font-weight: bold;
+              display: inline;
+            }
+            .account {
+              padding-left: 2%;
+              color: #8b949f;
+              display: inline;
+            }
+          }
+        }
+        .cash-cell {
+          .cash-text {
+            color: #8b949f;
+            display: inline;
+          }
+          .cash {
+            color: white;
+            font-size: 110%;
+            font-weight: bold;
+            display: inline;
+          }
+        }
+      }
+    }
     .right {
       border-left: 2px solid #3f4245;
       .bt-logo {
-        padding: 24% 4%;
+        padding: 24% 12%;
       }
     }
   }
