@@ -7,9 +7,18 @@ $('#confirm-button').on('click', function (e) {
     AcceptTransaction.prototype.onConfirmButtonClicked();
 });
 
+$('#repeat-button').on('click', function (e) {
+    AcceptTransaction.prototype.returnState();
+});
+
 $('#summ').on('keyup', function(e) {
     var index = Indexes.prototype.getCurrencyState();
     var currency = AcceptTransaction.prototype.getCurrency();
     var modifier = index[currency];
-    $('#currency-to-btc').text((parseInt($(this).val())*modifier).toFixed(7));
+    console.log($(this).val());
+    if ($(this).val()) {
+        $('#currency-to-btc').text(((parseInt($(this).val()) * modifier).toFixed(3)) + " BTC");
+    } else {
+        $('#currency-to-btc').text('0 BTC');
+    }
 });

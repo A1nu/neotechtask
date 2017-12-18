@@ -43,7 +43,7 @@
 
     <div class="wrapper container">
         <div class="row main-content">
-            <section class="col-md-12 mid-content">
+            <section class="col-md-12 mid-content" id="main-page" style="display: block">
                 <div class="heading"><h4>Бинарный опцион</h4></div>
                 <div class="jumbotron exchange-form">
                     <div class="row">
@@ -108,7 +108,10 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <div id="currency-to-btc"></div>
+                                <div class="currency-container">
+                                    <div class="btc-text"><h5>По текущему курсу: </h5></div>
+                                    <div id="currency-to-btc" class="btc-text"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,6 +122,28 @@
                     </button>
                 </div>
             </section>
+            <selection class="col-md-12 mid-content" id="modal" style="display: none">
+                <div class="heading"><h4 id="bet-state">Ваша ставка выиграла</h4></div>
+                <div class="jumbotron exchange-form">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="offer-information">
+                                <div class="show-icon" id="icon-holder"></div>
+                                <div class="text-row">
+                                    <div class="show-text" id="message1"></div>
+                                    <div class="show-text" id="message2"></div>
+                                    <div class="count" id="message3"></div>
+                                    <div class="button-holder">
+                                        <button type="button" class="btn" id="repeat-button">Сделать еще ставку</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </selection>
         </div>
         <div class="row bottom-content">
             <div class="col-md-8 footer-left">

@@ -52,7 +52,9 @@ header {
     .right {
       border-left: 2px solid #3f4245;
       .bt-logo {
-        padding: 24% 12%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
       }
     }
   }
@@ -103,6 +105,15 @@ body {
             }
           }
         }
+        .currency-container{
+          display: table;
+          .btc-text {
+            display: table-cell;
+            padding-left: 3%;
+            font-weight: bold;
+            width: 15%;
+          }
+        }
         .current-indexes {
           .list-group-item {
             border-radius: 0;
@@ -141,6 +152,43 @@ body {
             label {
               padding-left: 20%;
             }
+          }
+        }
+      }
+      .exchange-form {
+        .show-icon {
+          img {
+            height: 20%;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding-top: 30%;
+          }
+        }
+        .text-row {
+          padding-top:5%;
+          padding-bottom: 30%;
+          .show-text {
+            text-align: center;
+          }
+          .count {
+            padding-top: 2%;
+            display:table;
+            margin:0 auto;
+            font-weight: bold;
+            color: darkgreen;
+          }
+        }
+        .button-holder {
+          padding-top: 5%;
+          .btn {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3% 7% 3% 7%;
+            display: block;
+            font-weight: bold;
+            border: 1px solid #d6dadc;
           }
         }
       }

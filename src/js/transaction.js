@@ -43,9 +43,10 @@ AcceptTransaction.prototype.onConfirmButtonClicked = function () {
     console.log('currency', this.currency);
     console.log('trans: ', this.time, this.indexes);
     console.log('Start');
+    this.intervalTimer = 5000;
     this.intervalTimer = setInterval(function () {
         AcceptTransaction.prototype.awaitIndexChanging()
-    }, 5000);
+    }, this.intervalTimer);
 };
 
 AcceptTransaction.prototype.isNumber = function (value) {
@@ -79,6 +80,7 @@ AcceptTransaction.prototype.getValue = function () {
 };
 
 AcceptTransaction.prototype.awaitIndexChanging = function () {
+    console.log('refresh State');
     if (Indexes.prototype.getTime() !== this.time) {
         clearInterval(this.intervalTimer);
         this.intervalTimer = 0;
@@ -96,24 +98,67 @@ AcceptTransaction.prototype.setSumm = function () {
 AcceptTransaction.prototype.transactionComplete = function () {
     var NewIndexes = Indexes.prototype.getCurrencyState();
     var newRatio = NewIndexes[this.currency];
-
-
+    console.log('completed');
     if (this.grow) {
-        var currencyDiff = this.value * newRatio - this.value * this.indexes[this.currency];
-        var btcDiff = currencyDiff/newRatio;
-        UserData.prototype.updateCash(btcDiff);
-        if (this.indexes[this.currency] < newRatio) {
-            window.alert('Ставка победила, выигрыш составил'+ btcDiff + 'BTC' + currencyDiff + 'Валюты');
-        } else {
-            window.alert('Ставка проиграла, проигрыш составил'+ Math.abs(btcDiff) + 'BTC' + Math.abs(currencyDiff) + 'Валюты');
-        }
+        var currencyRise = this.value * newRatio - this.value * this.indexes[this.currency];
+        var btcRise = currencyRise/newRatio;
+        UserData.prototype.updateCash(btcRise);
+        this.showInformation(currencyRise, btcRise);
     } else {
         var currencyDiff = this.value * this.indexes[this.currency] - this.value * newRatio;
         var btcDiff = currencyDiff/newRatio;
-        if (this.indexes[this.currency] > newRatio) {
-            window.alert('Ставка победила, выигрыш составил'+ btcDiff + 'BTC' + currencyDiff + 'Валюты');
-        } else {
-            window.alert('Ставка проиграла, проигрыш составил'+ Math.abs(btcDiff) + 'BTC' + Math.abs(currencyDiff) + 'Валюты');
-        }
+        UserData.prototype.updateCash(btcDiff);
     }
+};
+
+AcceptTransaction.prototype.showInformation = function (currency, btc) {
+    var icon = document.getElementById('icon-holder');
+    var congratulationText = document.getElementById('message1');
+    var summText = document.getElementById('message2');
+    var currencyCount = document.getElementById('message3');
+    var currencyName = Indexes.prototype.getCurrencyRow(this.currency);
+
+    if (this.findState(btc)) {
+        icon.innerHTML = this.IMG_LINKS['win'];
+        congratulationText.innerHTML = this.BET_TEXT['congratulation'];
+        summText.innerHTML = this.BET_TEXT['win'];
+        currencyCount.innerHTML = btc + "BTC / " + currency + " " + currencyName;
+        this.showWindow();
+    } else {
+        icon.innerHTML = this.IMG_LINKS['lose'];
+        congratulationText.innerHTML = this.BET_TEXT['consolation'];
+        summText.innerHTML = this.BET_TEXT['lose'];
+        currencyCount.innerHTML = Math.abs(parseInt(btc)) + "BTC / " + Math.abs(parseInt(currency)) + " " + currencyName;
+        this.showWindow();
+    }
+};
+
+AcceptTransaction.prototype.findState = function (diff) {
+    return diff >= 0 ? true : false;
+};
+
+AcceptTransaction.prototype.showWindow = function () {
+    var main = document.getElementById('main-page');
+    var popup = document.getElementById('modal');
+    popup.style = "display: block";
+    main.style = "display: none";
+};
+
+AcceptTransaction.prototype.returnState = function () {
+  var main = document.getElementById('main-page');
+  var popup = document.getElementById('modal');
+  main.style = "display: block";
+  popup.style = "display: none";
+};
+
+AcceptTransaction.prototype.IMG_LINKS = {
+  win : "<img src=\"images/accept.png\">",
+  lose : "<img src=\"images/decline.png\">"
+};
+
+AcceptTransaction.prototype.BET_TEXT = {
+    congratulation: "Поздравляем, ваша ставка выиграла.",
+    win: "Сумма выигрыша по обновленному курсу:",
+    consolation: "К сожалению, ваша ставка проиграла.",
+    lose: "Сумма которая будет списана со счета:"
 };

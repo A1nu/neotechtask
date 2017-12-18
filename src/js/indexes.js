@@ -49,3 +49,7 @@ Indexes.prototype.getTime = function () {
 Indexes.prototype.getCurrencyState = function () {
     return [this.usd, this.gbp, this.eur]
 };
+
+Indexes.prototype.getCurrencyRow = function (currency) {
+    return Object.keys(this.data.bpi)[currency];
+};
