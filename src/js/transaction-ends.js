@@ -8,7 +8,7 @@ ShowTransaction.prototype.showInformation = function (currency, btc) {
     var summText = document.getElementById('message2');
     var currencyCount = document.getElementById('message3');
     var currencyName = Indexes.prototype.getCurrencyRow(AcceptTransaction.prototype.currency);
-    console.log(btc);
+
     if (this.findState(btc)) {
         icon.innerHTML = this.IMG_LINKS['win'];
         congratulationText.innerHTML = this.BET_TEXT['congratulation'];

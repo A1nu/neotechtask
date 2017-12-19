@@ -97,7 +97,7 @@ AcceptTransaction.prototype.setSumm = function () {
 AcceptTransaction.prototype.transactionComplete = function () {
     var NewIndexes = Indexes.prototype.getCurrencyState();
     var newRatio = NewIndexes[this.currency];
-    console.log('completed');
+
     if (this.grow) {
         var currencyRise = this.value * newRatio - this.value * this.indexes[this.currency];
         var btcRise = currencyRise/newRatio;
