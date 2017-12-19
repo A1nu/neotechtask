@@ -95,8 +95,11 @@ body {
               .switch {
                 padding-top: 7%;
                 padding-left: 15%;
-                .down {
-                  padding-left: 50%;
+                display: table;
+                .row {
+                  .radio-inline {
+                    display: inline;
+                  }
                 }
               }
             }

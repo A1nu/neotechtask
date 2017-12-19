@@ -68,9 +68,10 @@ body {
             padding-top: 3%; }
           body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch {
             padding-top: 7%;
-            padding-left: 15%; }
-            body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch .down {
-              padding-left: 50%; }
+            padding-left: 15%;
+            display: table; }
+            body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch .row .radio-inline {
+              display: inline; }
       body .wrapper .main-content .mid-content .currency-container {
         display: table; }
         body .wrapper .main-content .mid-content .currency-container .btc-text {

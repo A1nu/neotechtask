@@ -54,9 +54,9 @@
                                     <div class="form-group">
                                         <label for="currency">Валюта</label>
                                         <select class="form-control currency" id="currency">
-                                            <option value="0">USD</option>
-                                            <option value="1">GBP</option>
-                                            <option value="2">EUR</option>
+                                            <option value="0">&#36; USD</option>
+                                            <option value="1">&pound; GBP</option>
+                                            <option value="2">&euro; EUR</option>
                                         </select>
                                     </div>
                                     <div class="form-group input-summ">
@@ -66,8 +66,15 @@
                                 </form>
                                 <h6>После следующего изменения котировок индекс биткоина к этой валюте пойдет:</h6>
                                 <div class="switch">
-                                    <label class="radio-inline up"><input type="radio" name="optradio" id="up" value="unchecked">Вверх</label>
-                                    <label class="radio-inline down"><input type="radio" name="optradio" id="down" value="unchecked">Вниз</label>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label class="radio-inline up"><input type="radio" name="optradio" id="up" value="unchecked"><img src="images/up.png">Вверх</label>
+                                        </div>
+                                        <div class="col-md-8"></div>
+                                        <div class="col-md-2">
+                                            <label class="radio-inline down"><input type="radio" name="optradio" id="down" value="unchecked"><img src="images/dwn.png"> Вниз</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="checkbox">
