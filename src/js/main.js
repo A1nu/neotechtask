@@ -4,11 +4,13 @@ window.onload = function () {
 };
 
 $('#confirm-button').on('click', function (e) {
-    AcceptTransaction.prototype.onConfirmButtonClicked();
+    if (!AcceptTransaction.prototype.getTransactionStatus()) {
+        AcceptTransaction.prototype.onConfirmButtonClicked();
+    }
 });
 
 $('#repeat-button').on('click', function (e) {
-    AcceptTransaction.prototype.returnState();
+    ShowTransaction.prototype.returnState();
 });
 
 $('#summ').on('keyup', function(e) {
@@ -17,8 +19,8 @@ $('#summ').on('keyup', function(e) {
     var modifier = index[currency];
     console.log($(this).val());
     if ($(this).val()) {
-        $('#currency-to-btc').text(((parseInt($(this).val()) * modifier).toFixed(3)) + " BTC");
+        $('#currency-to-btc').text(((parseInt($(this).val()) * modifier).toFixed(3)) + " " + Indexes.prototype.getCurrencyRow(document.getElementById('currency').value));
     } else {
-        $('#currency-to-btc').text('0 BTC');
+        $('#currency-to-btc').text('0');
     }
 });

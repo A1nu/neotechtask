@@ -5,7 +5,8 @@ function AcceptTransaction() {
     this.grow = grow;
     this.indexes = indexes;
     this.value = value;
-    this.intervalTimer;
+    this.intervalTimer = intervalTimer;
+    this.isTransactionActive = status;
 }
 
 AcceptTransaction.prototype.onConfirmButtonClicked = function () {
@@ -39,10 +40,10 @@ AcceptTransaction.prototype.onConfirmButtonClicked = function () {
     this.indexes = Indexes.prototype.getCurrencyState();
     this.currency = this.getCurrency();
     this.setSumm();
-    console.log(this.summ);
-    console.log('currency', this.currency);
-    console.log('trans: ', this.time, this.indexes);
-    console.log('Start');
+    this.isTransactionActive = true;
+    this.lockButtons();
+
+
     this.intervalTimer = 5000;
     this.intervalTimer = setInterval(function () {
         AcceptTransaction.prototype.awaitIndexChanging()
@@ -72,7 +73,6 @@ AcceptTransaction.prototype.checkCurrencyChange = function () {
 
 AcceptTransaction.prototype.getCurrency = function () {
     return document.getElementById('currency').value;
-
 };
 
 AcceptTransaction.prototype.getValue = function () {
@@ -80,7 +80,6 @@ AcceptTransaction.prototype.getValue = function () {
 };
 
 AcceptTransaction.prototype.awaitIndexChanging = function () {
-    console.log('refresh State');
     if (Indexes.prototype.getTime() !== this.time) {
         clearInterval(this.intervalTimer);
         this.intervalTimer = 0;
@@ -103,7 +102,7 @@ AcceptTransaction.prototype.transactionComplete = function () {
         var currencyRise = this.value * newRatio - this.value * this.indexes[this.currency];
         var btcRise = currencyRise/newRatio;
         UserData.prototype.updateCash(btcRise);
-        this.showInformation(currencyRise, btcRise);
+        ShowTransaction.prototype.showInformation(currencyRise, btcRise);
     } else {
         var currencyDiff = this.value * this.indexes[this.currency] - this.value * newRatio;
         var btcDiff = currencyDiff/newRatio;
@@ -111,54 +110,24 @@ AcceptTransaction.prototype.transactionComplete = function () {
     }
 };
 
-AcceptTransaction.prototype.showInformation = function (currency, btc) {
-    var icon = document.getElementById('icon-holder');
-    var congratulationText = document.getElementById('message1');
-    var summText = document.getElementById('message2');
-    var currencyCount = document.getElementById('message3');
-    var currencyName = Indexes.prototype.getCurrencyRow(this.currency);
-
-    if (this.findState(btc)) {
-        icon.innerHTML = this.IMG_LINKS['win'];
-        congratulationText.innerHTML = this.BET_TEXT['congratulation'];
-        summText.innerHTML = this.BET_TEXT['win'];
-        currencyCount.innerHTML = btc + "BTC / " + currency + " " + currencyName;
-        this.showWindow();
-    } else {
-        icon.innerHTML = this.IMG_LINKS['lose'];
-        congratulationText.innerHTML = this.BET_TEXT['consolation'];
-        summText.innerHTML = this.BET_TEXT['lose'];
-        currencyCount.innerHTML = Math.abs(parseInt(btc)) + "BTC / " + Math.abs(parseInt(currency)) + " " + currencyName;
-        this.showWindow();
-    }
-};
-
 AcceptTransaction.prototype.findState = function (diff) {
     return diff >= 0 ? true : false;
 };
 
-AcceptTransaction.prototype.showWindow = function () {
-    var main = document.getElementById('main-page');
-    var popup = document.getElementById('modal');
-    popup.style = "display: block";
-    main.style = "display: none";
+AcceptTransaction.prototype.lockButtons = function () {
+    var button = document.getElementById('confirm-button');
+    var text = document.getElementById('summ');
+    var selectForm = document.getElementById('currency');
+
+    button.className = 'btn btn-outline-secondary disabled';
+    text.setAttribute('disabled', 'disabled');
+    selectForm.setAttribute('disabled', 'disabled');
 };
 
-AcceptTransaction.prototype.returnState = function () {
-  var main = document.getElementById('main-page');
-  var popup = document.getElementById('modal');
-  main.style = "display: block";
-  popup.style = "display: none";
+AcceptTransaction.prototype.changeActiveState = function () {
+    return this.isTransactionActive = false;
 };
 
-AcceptTransaction.prototype.IMG_LINKS = {
-  win : "<img src=\"images/accept.png\">",
-  lose : "<img src=\"images/decline.png\">"
-};
-
-AcceptTransaction.prototype.BET_TEXT = {
-    congratulation: "Поздравляем, ваша ставка выиграла.",
-    win: "Сумма выигрыша по обновленному курсу:",
-    consolation: "К сожалению, ваша ставка проиграла.",
-    lose: "Сумма которая будет списана со счета:"
+AcceptTransaction.prototype.getTransactionStatus = function () {
+    return this.isTransactionActive;
 };
