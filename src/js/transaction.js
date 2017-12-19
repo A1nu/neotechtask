@@ -107,6 +107,7 @@ AcceptTransaction.prototype.transactionComplete = function () {
         var currencyDiff = this.value * this.indexes[this.currency] - this.value * newRatio;
         var btcDiff = currencyDiff/newRatio;
         UserData.prototype.updateCash(btcDiff);
+        ShowTransaction.prototype.showInformation(currencyDiff, btcDiff);
     }
 };
 
