@@ -17,7 +17,7 @@ $('#summ').on('keyup', function(e) {
     var index = Indexes.prototype.getCurrencyState();
     var currency = AcceptTransaction.prototype.getCurrency();
     var modifier = index[currency];
-    console.log($(this).val());
+
     if ($(this).val()) {
         $('#currency-to-btc').text(((parseInt($(this).val()) * modifier).toFixed(3)) + " " + Indexes.prototype.getCurrencyRow(document.getElementById('currency').value));
     } else {

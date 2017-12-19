@@ -9,6 +9,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
+var gulpCopy = require('gulp-copy');
 
 
 // Development Tasks
@@ -77,11 +78,19 @@ gulp.task('clean-dist', function(){
     del(['dist/**/*', '!dist/images', '!dist/images/**/*'])
 });
 
+gulp.task('copy', function () {
+    gulp.src(['src/css/bootstrap.min.css', 'src/css/bootstrap-theme.min.css'])
+        .pipe(gulp.dest('dist/css'))
+    gulp.src(['src/js/jqery.min.js', 'src/js/bootstrap.min.js'])
+        .pipe(gulp.dest('dist/js'));
+});
+
 // Build Sequences
 // ---------------
 gulp.task('build', function(callback) {
     runSequence('clean-dist',
                 'sass',
+                'copy',
                 ['useref', 'images', 'fonts'],
                 callback);
 });

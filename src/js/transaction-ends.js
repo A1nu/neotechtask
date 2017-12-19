@@ -8,18 +8,18 @@ ShowTransaction.prototype.showInformation = function (currency, btc) {
     var summText = document.getElementById('message2');
     var currencyCount = document.getElementById('message3');
     var currencyName = Indexes.prototype.getCurrencyRow(AcceptTransaction.prototype.currency);
-
+    console.log(btc);
     if (this.findState(btc)) {
         icon.innerHTML = this.IMG_LINKS['win'];
         congratulationText.innerHTML = this.BET_TEXT['congratulation'];
         summText.innerHTML = this.BET_TEXT['win'];
-        currencyCount.innerHTML = btc + "BTC / " + currency + " " + currencyName;
+        currencyCount.innerHTML = btc.toFixed(5) + "BTC / " + currency.toFixed(2) + " " + currencyName;
         this.showWindow();
     } else {
         icon.innerHTML = this.IMG_LINKS['lose'];
         congratulationText.innerHTML = this.BET_TEXT['consolation'];
         summText.innerHTML = this.BET_TEXT['lose'];
-        currencyCount.innerHTML = Math.abs(parseInt(btc)) + "BTC / " + Math.abs(parseInt(currency)) + " " + currencyName;
+        currencyCount.innerHTML = btc.toFixed(5) + "BTC / " + currency.toFixed(2) + " " + currencyName;
         this.showWindow();
     }
 };

@@ -1,0 +1,160 @@
+header {
+  background-color: #0a1013; }
+  header .row {
+    border-bottom: 2px solid #3f4245; }
+    header .row .left .logo {
+      padding: 2%;
+      margin: auto; }
+    header .row .middle .user-cell {
+      display: table;
+      padding-top: 4%; }
+      header .row .middle .user-cell .avatar {
+        display: table-cell;
+        vertical-align: middle;
+        margin: auto; }
+      header .row .middle .user-cell .account-data {
+        display: table-cell;
+        width: 300%;
+        padding-left: 4%; }
+        header .row .middle .user-cell .account-data .account-cell {
+          display: inline; }
+          header .row .middle .user-cell .account-data .account-cell .name {
+            color: white;
+            font-size: 110%;
+            font-weight: bold;
+            display: inline; }
+          header .row .middle .user-cell .account-data .account-cell .account {
+            padding-left: 2%;
+            color: #8b949f;
+            display: inline; }
+      header .row .middle .user-cell .cash-cell .cash-text {
+        color: #8b949f;
+        display: inline; }
+      header .row .middle .user-cell .cash-cell .cash {
+        color: white;
+        font-size: 110%;
+        font-weight: bold;
+        display: inline; }
+    header .row .right {
+      border-left: 2px solid #3f4245;
+      padding: 1% 1% 1% 1.5%; }
+
+body {
+  background-color: black; }
+  body .wrapper {
+    padding: 4% 5% 0% 5%; }
+    body .wrapper .main-content {
+      background-color: #ffffff; }
+      body .wrapper .main-content .mid-content .heading {
+        background-color: #ffffff;
+        border-bottom: solid #d6dadc; }
+        body .wrapper .main-content .mid-content .heading h4 {
+          padding: 2% 0% 2% 0%; }
+      body .wrapper .main-content .mid-content .exchange-form {
+        background-color: #ffffff;
+        border-radius: 0;
+        padding: 0; }
+        body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form {
+          background-color: #f9f9f9;
+          border: 1px solid #d6dadc;
+          padding: 5%; }
+          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .currency {
+            width: 220%; }
+          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .input-summ {
+            padding-left: 30%; }
+            body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .input-summ .summ {
+              width: 110%; }
+          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form h6 {
+            padding-top: 3%; }
+          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch {
+            padding-top: 7%;
+            padding-left: 15%; }
+            body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch .down {
+              padding-left: 50%; }
+      body .wrapper .main-content .mid-content .currency-container {
+        display: table; }
+        body .wrapper .main-content .mid-content .currency-container .btc-text {
+          display: table-cell;
+          padding-left: 3%;
+          font-weight: bold;
+          width: 15%; }
+      body .wrapper .main-content .mid-content .current-indexes .list-group-item {
+        border-radius: 0; }
+        body .wrapper .main-content .mid-content .current-indexes .list-group-item .currency-cell .currency-logo {
+          display: table-cell;
+          vertical-align: middle; }
+        body .wrapper .main-content .mid-content .current-indexes .list-group-item .currency-cell .currency-index {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0 0 0 20%;
+          width: 200%; }
+          body .wrapper .main-content .mid-content .current-indexes .list-group-item .currency-cell .currency-index .currency-head {
+            font-weight: bold;
+            text-transform: uppercase; }
+          body .wrapper .main-content .mid-content .current-indexes .list-group-item .currency-cell .currency-index .currency-state {
+            color: #6b737c; }
+      body .wrapper .main-content .mid-content .low {
+        border-top: solid #d6dadc; }
+        body .wrapper .main-content .mid-content .low .btn {
+          margin: 3% 0% 3% 65%;
+          border: solid #c2c2c2;
+          background-color: #c2c2c2;
+          padding-left: 0%;
+          color: white;
+          text-transform: uppercase;
+          font-size: 16px;
+          width: 30%; }
+          body .wrapper .main-content .mid-content .low .btn label {
+            padding-left: 20%; }
+      body .wrapper .main-content .exchange-form .show-icon img {
+        height: 20%;
+        width: 20%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-top: 30%; }
+      body .wrapper .main-content .exchange-form .text-row {
+        padding-top: 5%;
+        padding-bottom: 30%; }
+        body .wrapper .main-content .exchange-form .text-row .show-text {
+          text-align: center; }
+        body .wrapper .main-content .exchange-form .text-row .count {
+          padding-top: 2%;
+          display: table;
+          margin: 0 auto;
+          font-weight: bold;
+          color: darkgreen; }
+      body .wrapper .main-content .exchange-form .button-holder {
+        padding-top: 5%; }
+        body .wrapper .main-content .exchange-form .button-holder .btn {
+          margin-left: auto;
+          margin-right: auto;
+          padding: 3% 7% 3% 7%;
+          display: block;
+          font-weight: bold;
+          border: 1px solid #d6dadc; }
+    body .wrapper .bottom-content {
+      background-color: #1c1f22; }
+      body .wrapper .bottom-content .footer-left {
+        padding-top: 2%; }
+        body .wrapper .bottom-content .footer-left .navbar, body .wrapper .bottom-content .footer-left .navbar-nav {
+          background-color: #1c1f22;
+          float: none;
+          border: none; }
+          body .wrapper .bottom-content .footer-left .navbar li, body .wrapper .bottom-content .footer-left .navbar-nav li {
+            padding: 1%;
+            text-decoration: underline; }
+            body .wrapper .bottom-content .footer-left .navbar li a, body .wrapper .bottom-content .footer-left .navbar-nav li a {
+              color: #5e656d;
+              font-size: 12px; }
+      body .wrapper .bottom-content .footer-right {
+        padding-top: 3.2%;
+        background-color: #1c1f22; }
+        body .wrapper .bottom-content .footer-right .img-row {
+          padding-left: 30%; }
+          body .wrapper .bottom-content .footer-right .img-row img {
+            padding-left: 3%; }
+  body .bottom-text {
+    padding-top: 3%;
+    padding-bottom: 1%;
+    text-align: center; }
