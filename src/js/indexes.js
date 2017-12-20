@@ -20,9 +20,9 @@ Indexes.prototype.getData = function () {
 Indexes.prototype.parsing = function () {
     var input = this.getData();
     this.data = JSON.parse(input);
-    return [this.data, this.refreshedTime];
+    return this.data;
 };
-
+//fills currencies form and refreshing indexes, using interval, because cant set websocket from BE
 Indexes.prototype.fillCurrenciesForms = function () {
     this.parsing();
     var bpi = this.data.bpi;

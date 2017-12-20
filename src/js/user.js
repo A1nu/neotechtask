@@ -2,7 +2,7 @@ function UserData() {
     this.data = data;
     this.availableCash = availableCash;
 };
-
+//hardcoded user data, because cant get it from BE
 UserData.prototype.getData = function () {
     var row = {
         "username": "Иннокентий Ф.",

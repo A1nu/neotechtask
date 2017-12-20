@@ -35,12 +35,12 @@ ShowTransaction.prototype.showWindow = function () {
     main.style = "display: none";
 };
 
-ShowTransaction.prototype.returnState = function () {
+ShowTransaction.prototype.hideWindow = function () {
+    this.unlockButtons();
     var main = document.getElementById('main-page');
     var popup = document.getElementById('modal');
     main.style = "display: block";
     popup.style = "display: none";
-    this.unlockButtons();
 };
 
 ShowTransaction.prototype.unlockButtons = function () {

@@ -8,7 +8,10 @@ function AcceptTransaction() {
     this.intervalTimer = intervalTimer;
     this.isTransactionActive = status;
 }
-
+/*
+Checking form correctness and launching transaction process,
+using interval because cant set websocket on be
+*/
 AcceptTransaction.prototype.onConfirmButtonClicked = function () {
     this.value = this.getValue();
 
@@ -36,6 +39,7 @@ AcceptTransaction.prototype.onConfirmButtonClicked = function () {
         window.alert('Для продолжения необходимо принять правила сервиса.');
         return;
     }
+
     this.time = Indexes.prototype.getTime();
     this.indexes = Indexes.prototype.getCurrencyState();
     this.currency = this.getCurrency();
@@ -48,6 +52,10 @@ AcceptTransaction.prototype.onConfirmButtonClicked = function () {
     this.intervalTimer = setInterval(function () {
         AcceptTransaction.prototype.awaitIndexChanging()
     }, this.intervalTimer);
+};
+
+AcceptTransaction.prototype.getValue = function () {
+    return document.getElementById('summ').value;
 };
 
 AcceptTransaction.prototype.isNumber = function (value) {
@@ -75,9 +83,6 @@ AcceptTransaction.prototype.getCurrency = function () {
     return document.getElementById('currency').value;
 };
 
-AcceptTransaction.prototype.getValue = function () {
-    return document.getElementById('summ').value;
-};
 
 AcceptTransaction.prototype.awaitIndexChanging = function () {
     if (Indexes.prototype.getTime() !== this.time) {
@@ -92,6 +97,16 @@ AcceptTransaction.prototype.setSumm = function () {
     var value = parseInt(this.value);
 
     return this.summ = (value * ratio);
+};
+
+AcceptTransaction.prototype.lockButtons = function () {
+    var button = document.getElementById('confirm-button');
+    var text = document.getElementById('summ');
+    var selectForm = document.getElementById('currency');
+
+    button.className = 'btn btn-outline-secondary disabled';
+    text.setAttribute('disabled', 'disabled');
+    selectForm.setAttribute('disabled', 'disabled');
 };
 
 AcceptTransaction.prototype.transactionComplete = function () {
@@ -115,20 +130,10 @@ AcceptTransaction.prototype.findState = function (diff) {
     return diff >= 0 ? true : false;
 };
 
-AcceptTransaction.prototype.lockButtons = function () {
-    var button = document.getElementById('confirm-button');
-    var text = document.getElementById('summ');
-    var selectForm = document.getElementById('currency');
-
-    button.className = 'btn btn-outline-secondary disabled';
-    text.setAttribute('disabled', 'disabled');
-    selectForm.setAttribute('disabled', 'disabled');
-};
-
 AcceptTransaction.prototype.changeActiveState = function () {
     return this.isTransactionActive = false;
 };
-
+//variable shows transaction pending state
 AcceptTransaction.prototype.getTransactionStatus = function () {
     return this.isTransactionActive;
 };

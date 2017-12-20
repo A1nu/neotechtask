@@ -2,7 +2,7 @@ window.onload = function () {
     Indexes.prototype.fillCurrenciesForms();
     UserData.prototype.fillUserForm();
 };
-
+//Confirm button works only if transaction not pending
 $('#confirm-button').on('click', function (e) {
     if (!AcceptTransaction.prototype.getTransactionStatus()) {
         AcceptTransaction.prototype.onConfirmButtonClicked();
@@ -10,9 +10,9 @@ $('#confirm-button').on('click', function (e) {
 });
 
 $('#repeat-button').on('click', function (e) {
-    ShowTransaction.prototype.returnState();
+    ShowTransaction.prototype.hideWindow();
 });
-
+//realtime updating currency-converted text
 $('#summ').on('keyup', function(e) {
     var index = Indexes.prototype.getCurrencyState();
     var currency = AcceptTransaction.prototype.getCurrency();
