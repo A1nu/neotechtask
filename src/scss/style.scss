@@ -81,12 +81,11 @@ body {
               border: 1px solid #d6dadc;
               padding: 5%;
               .currency {
-                width: 220%;
+                width: 100%;
               }
               .input-summ {
-                padding-left: 30%;
                 .summ {
-                  width: 110%;
+                  width: 100%;
                 }
               }
               h6 {
@@ -198,9 +197,10 @@ body {
       .footer-left {
         padding-top: 2%;
         .navbar, .navbar-nav {
-          background-color: #1c1f22;
-          float: none;
+          background: none;
           border: none;
+          float: none;
+          box-shadow: none;
           li {
             padding: 1%;
             text-decoration: underline;
@@ -227,5 +227,23 @@ body {
     padding-top: 3%;
     padding-bottom: 1%;
     text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  body .wrapper .main-content .mid-content .low .btn {
+    display: inline-block;
+    width: auto;
+    margin: 5% auto;
+    padding: 0 20% 0 0;
+    float: right;
+  }
+  .navbar {
+    text-align: center;
+  }
+  body .wrapper .bottom-content .footer-right .img-row {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 0;
   }
 }

@@ -59,11 +59,9 @@ body {
           border: 1px solid #d6dadc;
           padding: 5%; }
           body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .currency {
-            width: 220%; }
-          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .input-summ {
-            padding-left: 30%; }
-            body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .input-summ .summ {
-              width: 110%; }
+            width: 100%; }
+          body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .input-summ .summ {
+            width: 100%; }
           body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form h6 {
             padding-top: 3%; }
           body .wrapper .main-content .mid-content .exchange-form .what-to-do .choosing-form .switch {
@@ -139,9 +137,10 @@ body {
       body .wrapper .bottom-content .footer-left {
         padding-top: 2%; }
         body .wrapper .bottom-content .footer-left .navbar, body .wrapper .bottom-content .footer-left .navbar-nav {
-          background-color: #1c1f22;
+          background: none;
+          border: none;
           float: none;
-          border: none; }
+          box-shadow: none; }
           body .wrapper .bottom-content .footer-left .navbar li, body .wrapper .bottom-content .footer-left .navbar-nav li {
             padding: 1%;
             text-decoration: underline; }
@@ -159,3 +158,17 @@ body {
     padding-top: 3%;
     padding-bottom: 1%;
     text-align: center; }
+
+@media (max-width: 767px) {
+  body .wrapper .main-content .mid-content .low .btn {
+    display: inline-block;
+    width: auto;
+    margin: 5% auto;
+    padding: 0 20% 0 0;
+    float: right; }
+  .navbar {
+    text-align: center; }
+  body .wrapper .bottom-content .footer-right .img-row {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 0; } }

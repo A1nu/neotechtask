@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 col-sm-1 right">
+            <div class="col-md-1 hidden-xs right">
                 <img class="bt-logo" src="images/btclogo.png">
             </div>
         </div>
@@ -51,17 +51,23 @@
                             <h4>Выберите валюту и введите сумму ставки:</h4>
                             <div class="choosing-form">
                                 <form class="form-inline">
-                                    <div class="form-group">
-                                        <label for="currency">Валюта</label>
-                                        <select class="form-control currency" id="currency">
-                                            <option value="0">&#36; USD</option>
-                                            <option value="1">&pound; GBP</option>
-                                            <option value="2">&euro; EUR</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group input-summ">
-                                        <label for="summ">Сумма</label>
-                                        <input type="number" class="form-control summ" id="summ">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="currency">Валюта</label>
+                                                <select class="form-control currency" id="currency">
+                                                    <option value="0">&#36; USD</option>
+                                                    <option value="1">&pound; GBP</option>
+                                                    <option value="2">&euro; EUR</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group input-summ">
+                                                <label for="summ">Сумма</label>
+                                                <input type="number" class="form-control summ" id="summ">
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                                 <h6>После следующего изменения котировок индекс биткоина к этой валюте пойдет:</h6>
